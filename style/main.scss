@@ -1,6 +1,6 @@
 $cta_background: black;
 $cta_font: white;
-$cta_hover: #00CFFF;
+$light_blue: #00CFFF;
 $about_font: #00E2AC;
 $footer_color: black;
 $background_color: white;
@@ -39,9 +39,10 @@ $background_color: white;
 }
 
 #intro {
-  h1, h5 {
-      text-shadow: rgba(0,0,0,0.25) 0px 5px 5px;
-  }
+    h1,
+    h5 {
+        text-shadow: rgba(0,0,0,0.25) 0 5px 5px;
+    }
 
     h5 {
         margin-bottom: 20px;
@@ -62,12 +63,12 @@ $background_color: white;
     cursor: pointer;
 
     &:hover {
-        background-color: $cta_hover;
+        background-color: $light_blue;
     }
 }
 
 #about {
-    min-height: 0px;
+    min-height: 0;
 
     .left-col {
         color: $about_font;
@@ -102,7 +103,7 @@ $background_color: white;
 
     .col-md-4 {
         overflow: hidden;
-        padding: 0 5px 10px 5px;
+        padding: 0 5px 10px;
 
         img {
             height: 100%;
@@ -163,6 +164,95 @@ $background_color: white;
     margin-left: auto;
     color: $about_font;
 }
+
+#sidebar-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: fixed;
+    width: 0;
+    height: 100%;
+    padding-top: 10px;
+
+    font-family: "Roboto", Serif;
+    color: white;
+    background-color: black;
+    z-index: 2;
+    overflow: hidden;
+
+    transition: all 0.5s ease;
+
+    h2 {
+        font-size: 40px;
+        line-height: 40px;
+        margin: 4px;
+        padding: 0;
+    }
+
+    a {
+        color: white;
+        font-size: 24px;
+        margin-left: 10px;
+    }
+
+    &.open {
+        width: 320px;
+    }
+
+    .sidebar-links {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+}
+
+#close-btn {
+  margin-left: 30px;
+  margin-top: 10px;
+  align-self: flex-start;
+
+  color: white;
+  cursor: pointer;
+
+  &:hover{
+    opacity: .5;
+  }
+
+  img{
+    height: 30px;
+    width: 30px;
+  }
+}
+
+#hamburger{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: fixed;
+  height: 34px;
+  width: 40px;
+  left: 30px;
+  top: 20px;
+
+  border-radius: 4px;
+  background-color: black;
+
+  z-index: 1;
+
+  &:hover{
+    background-color: $light_blue;
+  }
+
+  img{
+    height: 30px;
+    width: 30px;
+  }
+}
+
 @media only screen and (max-width: 480px) {
     #intro {
         max-height: 640px;
